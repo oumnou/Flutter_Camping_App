@@ -12,7 +12,7 @@ class WelcomePage extends StatefulWidget {
 }
 
 class _WelcomePageState extends State<WelcomePage> {
-  List<String>  images = ["bg4.jpg","bg3.jpg","bg2.jpg", ];
+  List<String>  images = ["bg3.jpg","bg1.jpg","bg2.jpg"];
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +23,7 @@ class _WelcomePageState extends State<WelcomePage> {
         itemBuilder: (_, index) {
           return Container(
 
-            width: double.maxFinite,
+            width: double.maxFinite, 
             height: double.maxFinite,
             decoration: BoxDecoration(
               image: DecorationImage(
@@ -34,6 +34,7 @@ class _WelcomePageState extends State<WelcomePage> {
             child: Container(
               margin: const EdgeInsets.only(top:150, left:20, right:20),
               child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Column(
                     crossAxisAlignment:CrossAxisAlignment.start,
@@ -53,8 +54,22 @@ class _WelcomePageState extends State<WelcomePage> {
                       ResponsiveButton(width: 120,)
 
                      ],
+                  ),
+                  Column(
+                    children: List.generate(3, (indexDots){
+                      return Container(
+                        margin: const EdgeInsets.only(bottom: 2),
+                        width: 8,
+                        height: index==indexDots?25:8,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(8),
+                          color:index==indexDots?AppColors.mainColor:AppColors.mainColor.withOpacity(0.3)
+                          ),
+                      );
+                    }),
                   )
-              ]),
+                ],
+                ),
             ),
           );
         },
