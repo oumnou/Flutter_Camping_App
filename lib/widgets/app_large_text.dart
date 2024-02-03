@@ -8,7 +8,7 @@ class AppLargeText extends StatelessWidget {
   AppLargeText({Key? key,
    this.size = 30,
    required this.text,
-   this.color = const Color.fromARGB(222, 255, 199, 103)}):super(key: key);
+   this.color = const Color.fromARGB(222, 255, 179, 48)}):super(key: key);
 
   @override
   Widget build(BuildContext context) {
